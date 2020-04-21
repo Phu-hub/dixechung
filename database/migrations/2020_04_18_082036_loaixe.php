@@ -13,7 +13,26 @@ class Loaixe extends Migration
      */
     public function up()
     {
-        //
+        if (!Schema::hasTable('loaixe')) {
+            Schema::create('loaixe', function (Blueprint $table) {
+                $table->increments('maloaixe')->comment('');
+                $table->integer('maloaixe')->comment('');
+                $table->String('tenloaixe')->comment('');
+            
+                $table->timestamp('created_at')
+                    ->default(DB::raw('CURRENT_TIMESTAMP'))
+                    ->comment('ngày tạo');
+
+                $table->timestamp('updated_at')
+                    ->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
+                    ->comment('ngày cập nhật');
+
+                $table->timestamp('deleted_at')
+                    ->nullable()
+                    ->comment('ngày xóa tạm');
+            });
+            DB::statement("ALTER TABLE `loaixe` comment ''");
+        }
     }
 
     /**
