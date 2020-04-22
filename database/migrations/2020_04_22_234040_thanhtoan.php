@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Admin extends Migration
+class Thanhtoan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,10 @@ class Admin extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('admin')) {
-            Schema::create('admin', function (Blueprint $table) {
-                $table->increments('maadmin')->comment('');
-                $table->string('tenadmin')->comment('');
-                $table->string('diachi')->comment('');
-                $table->string('gioitinh')->comment('');
-                $table->string('email')->comment('');
-                $table->integer('sdt')->comment('');
-                $table->integer('so_tk_nh')->comment('');
-                $table->string('matkhau')->comment('');
-                $table->string('anhdaidien')->comment('');
+        if (!Schema::hasTable('thanhtoan')) {
+            Schema::create('thanhtoan', function (Blueprint $table) {
+                $table->string('hinhthucthanhtoan', 191)->comment('');
+                $table->primary('hinhthucthanhtoan');
                 
                 $table->timestamp('created_at')
             ->default(DB::raw('CURRENT_TIMESTAMP'))
@@ -37,7 +30,7 @@ class Admin extends Migration
                 ->nullable()
                 ->comment('ngày xóa tạm');
             });
-            DB::statement("ALTER TABLE `admin` comment ''");
+            DB::statement("ALTER TABLE `thanhtoan` comment ''");
         }
     }
 
