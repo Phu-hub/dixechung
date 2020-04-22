@@ -15,9 +15,9 @@ class Loaixe extends Migration
     {
         if (!Schema::hasTable('loaixe')) {
             Schema::create('loaixe', function (Blueprint $table) {
-                $table->increments('maloaixe')->comment('');
+                $table->increments('malo/aixe')->comment('');
                 $table->integer('maloaixe')->comment('');
-                $table->String('tenloaixe')->comment('');
+                $table->string('tenloaixe')->comment('');
             
                 $table->timestamp('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'))

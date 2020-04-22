@@ -17,7 +17,7 @@ class Yeucau extends Migration
             Schema::create('yeucau', function (Blueprint $table) {
                 $table->increments('mayeucau')->comment('');
                 $table->integer('mauyeucau')->comment('');
-                $table->String('gioitinh')->comment('');
+                $table->string('gioitinh')->comment('');
                 $table->integer('luatuoi')->comment('');
             
                 $table->timestamp('created_at')

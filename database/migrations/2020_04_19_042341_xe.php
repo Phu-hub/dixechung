@@ -15,8 +15,8 @@ class Xe extends Migration
     {
         if (!Schema::hasTable('xe')) {
             Schema::create('xe', function (Blueprint $table) {
-                $table->String('biensoxe')->comment('');
-                $table->String('hangxe')->comment('');
+                $table->string('biensoxe', 191)->comment('');
+                $table->string('hangxe')->comment('');
                 $table->integer('maloaixe')->comment('');
                 $table->primary('biensoxe');
                 // $table->increments('id')->comment('id');

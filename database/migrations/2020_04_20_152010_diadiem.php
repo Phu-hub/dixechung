@@ -16,9 +16,8 @@ class Diadiem extends Migration
         if (!Schema::hasTable('diadiem')) {
             Schema::create('diadiem', function (Blueprint $table) {
                 $table->increments('madiadiem')->comment('');
-                $table->integer('madiadiem')->comment('');
-                $table->String('tendiadiem')->comment('');
-                $table->String('diachicuthe')->comment('');
+                $table->string('tendiadiem')->comment('');
+                $table->string('diachicuthe')->comment('');
                 //$table->primary('thoidiembatdau');
                 $table->timestamp('created_at')
                 ->default(DB::raw('CURRENT_TIMESTAMP'))
